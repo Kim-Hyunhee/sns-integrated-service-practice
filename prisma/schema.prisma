@@ -21,7 +21,7 @@ model User {
 }
 
 model Feed {
-    feedId             String @id 
+    feedId             Int @id @default(autoincrement()) 
     type               String
     title              String
     content            String

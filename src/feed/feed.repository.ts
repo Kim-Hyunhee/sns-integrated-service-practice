@@ -8,5 +8,9 @@ export class FeedRepository {
     async findManyFeed(){
         return await this.prisma.feed.findMany()
     }
+
+    async findFeed({feedId}:{feedId:number}){
+        return await this.prisma.feed.findUnique({where:{feedId}});
+    }
 }
 

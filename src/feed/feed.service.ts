@@ -8,4 +8,8 @@ export class FeedService {
     async fetchManyFeed(){
         return await this.repository.findManyFeed()
     }
+
+    async fetchFeed({feedId}:{feedId:number}){
+        return await this.repository.findFeed({feedId})
+    }
 }
