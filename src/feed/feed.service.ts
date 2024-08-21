@@ -16,4 +16,8 @@ export class FeedService {
     async modifyFeedLikeCount ({feedId}:{feedId:number}) {
         return await this.repository.updateFeedLikeCount({feedId})
     }
+
+    async modifyFeedShareCount ({feedId}:{feedId:number}) {
+        return await this.repository.updateFeedShareCount({feedId})
+    }
 }
