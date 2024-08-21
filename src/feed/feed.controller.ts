@@ -1,4 +1,4 @@
-import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Param, ParseIntPipe,Patch } from '@nestjs/common';
 import { FeedService } from './feed.service';
 
 @Controller('feed')
@@ -13,5 +13,10 @@ export class FeedController {
     @Get('/:id')
     async getFeed(@Param('id', ParseIntPipe) feedId:number){
         return await this.feedService.fetchFeed({feedId})
+    }
+
+    @Patch('/:id/likeCount')
+    async patchFeedLikeCount(@Param('id', ParseIntPipe) feedId:number){
+        return await this.feedService.modifyFeedLikeCount({feedId})
     }
 }

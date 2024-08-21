@@ -12,4 +12,8 @@ export class FeedService {
     async fetchFeed({feedId}:{feedId:number}){
         return await this.repository.findFeed({feedId})
     }
+
+    async modifyFeedLikeCount ({feedId}:{feedId:number}) {
+        return await this.repository.updateFeedLikeCount({feedId})
+    }
 }
